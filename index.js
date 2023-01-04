@@ -1,3 +1,5 @@
+const inquirer = require("inquirer");
+
 const Manager = require('./lib/Manager');
 const questions = [
     {
@@ -22,7 +24,7 @@ const questions = [
     },
 ];
 const Engineer = require('./lib/Engineer');
-const Engineerquestions = [
+const questions2 = [
     {
         type: "input",
         name: "title",
@@ -45,7 +47,7 @@ const Engineerquestions = [
     },
 ];
 const Intern = require('./lib/Intern');
-const Internquestions = [
+const questions3 = [
     {
         type: "input",
         name: "title",
