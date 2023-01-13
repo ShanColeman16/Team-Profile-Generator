@@ -7,7 +7,7 @@ describe("Employee", () => {
   });
   it ('should have an id', () => {
     const employee = new Employee('Derrion', 1, 'coolbreeze0616@gmail.com');
-    expect(employee.id).toBe('1');
+    expect(employee.id).toBe(1);
   })
   it ('should have a email', () => {
     const employee = new Employee('Derrion', 1, 'coolbreeze0616@gmail.com');
@@ -15,6 +15,6 @@ describe("Employee", () => {
   })
   it ('should have a role', () => {
     const employee = new Employee('Derrion', 1, 'coolbreeze0616@gmail.com');
-    expect(employee.getRole).toBe('Employee');
+    expect(employee.getRole()).toBe('Employee');
   })
 });
