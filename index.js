@@ -3,28 +3,28 @@ const Engineer = require("../lib/Engineer");
 const Intern = require("../lib/Intern");
 const Manager = require('./lib/Manager');
 const fs = require('fs');
-
+const prompt = inquirer.createPromptModule();
 
 const questions = [
     {
         type: "input",
-        name: "title",
-        message: "Please enter your manager's name?"
+        name: 'name',
+        message: 'Please enter your manager/s name?'
     },
     {
         type: "input",
-        name: "github",
-        message: "What is your employee id?"
+        name: 'id',
+        message: 'What is your manager/s id?'
     },
     {
         type: "input",
-        name: "email",
-        message: "What is your email address?"
+        name: 'email',
+        message: 'What is your manager/s email address?'
     },
     {
         type: "input",
-        name: "email",
-        message: "What is your office number?"
+        name: 'office number',
+        message: 'What is your manager/s office number?'
     },
 ];
 const Engineer = require('./lib/Engineer');
