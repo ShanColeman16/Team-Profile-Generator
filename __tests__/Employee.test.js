@@ -1,19 +1,19 @@
 const Employee = require("../lib/Employee");
 
 describe("Employee", () => {
-  it ('has an name', () => {
+  it ('should have a name', () => {
     const employee = new Employee('Derrion', 1, 'coolbreeze0616@gmail.com');
     expect(employee.name).toBe('Derrion');
   });
-  it ('has an id', () => {
+  it ('should have an id', () => {
     const employee = new Employee('Derrion', 1, 'coolbreeze0616@gmail.com');
     expect(employee.id).toBe('1');
   })
-  it ('has a email', () => {
+  it ('should have a email', () => {
     const employee = new Employee('Derrion', 1, 'coolbreeze0616@gmail.com');
     expect(employee.email).toBe('coolbreeze0616@gmail.com');
   })
-  it ('has a role', () => {
+  it ('should havea role', () => {
     const employee = new Employee('Derrion', 1, 'coolbreeze0616@gmail.com');
     expect(employee.getRole).toBe('Employee');
   })
