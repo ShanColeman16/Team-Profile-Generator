@@ -4,6 +4,8 @@ const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
 const fs = require('fs');
 const prompt = inquirer.createPromptModule();
+
+const pageTemplate = require('./src/page-template');
 const yourTeams = [];
 
 const managerQuestions = [
@@ -63,7 +65,8 @@ const internQuestions = [
   },
 ];
 
-prompt(managerQuestions).then(({name, id, email, officeNumber}) => {
+prompt(managerQuestions).then(({ name, id, email, officeNumber }) => {
   const manager = new Manager(name, id, email, officeNumber);
   yourTeams.push(manager);
+  fs.writeFileSync('./dist/team.html');
 });
