@@ -8,33 +8,31 @@ const yourTeams = [];
 
 const managerQuestions = [
   {
-    message: 'Please enter your manager/s name?',
+    message: 'Please enter your manager\'s name?',
     name: 'name',
   },
   {
-    message: 'What is your manager/s id?',
+    message: 'What is your manager\'s id?',
     name: 'id',
   },
   {
-    message: 'What is your manager/s email address?',
+    message: 'What is your manager\'s email address?',
     name: 'email',
   },
   {
-    message: 'What is your manager/s office number?',
+    message: 'What is your manager\s office number?',
     name: 'officeNumber',
   },
-].then((manager) => {
-  console.log(manager);
-});
+];
 
 
 const engineerQuestions = [
   {
-    name: 'title',
+    name: 'name',
     message: 'Engineer? Please enter your name?'
   },
   {
-    name: 'github',
+    name: 'id',
     message: 'What is your employee id?'
   },
   {
@@ -42,25 +40,30 @@ const engineerQuestions = [
     message: 'What is your email address?'
   },
   {
-    name: 'email',
+    name: 'gitHub',
     message: 'What is GitHub username?'
   },
 ];
 const internQuestions = [
   {
-    name: 'title',
+    name: 'name',
     message: 'Intern? Please enter your name?'
   },
   {
-    name: 'github',
+    name: 'id',
     message: 'What is your employee id?'
   },
   {
-    name: 'email',
+    name: 'school',
     message: 'What is the name of your school?'
   },
   {
     name: 'email',
-    message: 'What is your office number?'
+    message: 'What is your email address?'
   },
 ];
+
+prompt(managerQuestions).then(({name, id, email, officeNumber}) => {
+  const manager = new Manager(name, id, email, officeNumber);
+  yourTeams.push(manager);
+});
