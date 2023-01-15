@@ -1,12 +1,17 @@
 // create the team
 const generateTeamMembers = (team) => {
+  team.map(memeber => {
+        if (memeber.getRole() === 'Engineer') {
+          return
+        }
 
+  }).join('');
 };
 
 // export function to generate entire page
 module.exports = (team) => {
   // TODO: MAIN HTML TEMPLATE LITERAL GOES HERE
-`
+  `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,6 +74,7 @@ module.exports = (team) => {
         <li>School: FUN University</li>
       </ul>
     </article>
+  ${generateTeamMembers(team)}
   </main>
   <footer>
     &copy; 2022-2023
