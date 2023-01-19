@@ -1,11 +1,45 @@
 // create the team
 const generateTeamMembers = (team) => {
-  team.map(memeber => {
-        if (memeber.getRole() === 'Engineer') {
-          return
-        }
+  return team.map(memeber => {
+    if (memeber.getRole() === 'Engineer') {
+      return  `
+      <article>
+      <h2>${memeber.getRole()}</h2>
+      <ul>
+        <li>ID:${memeber.getId()}</li>
+        <li>Email:${memeber.getEmail()}</li>
+        <li>GitHub: <a href="#github">${memeber.getGitHubS()}/a></li>
+      </ul>
+    </article>
+    `
+  }
+  if (memeber.getRole() === 'Intern') {
+    return  `
+    <article>
+    <h2>${memeber.getRole()}</h2>
+    <ul>
+      <li>ID:${memeber.getId()}</li>
+      <li>Email:${memeber.getEmail()}</li>
+      <li>GitHub: <a href="#github">${memeber.getGitHubS()}/a></li>
+    </ul>
+  </article>
+  `
+}
 
-  }).join('');
+if (memeber.getRole() === 'Manager') {
+  return  `
+  <article>
+  <h2>${memeber.getRole()}</h2>
+  <ul>
+    <li>ID:${memeber.getId()}</li>
+    <li>Email:${memeber.getEmail()}</li>
+    <li>GitHub: <a href="#github">${memeber.getGitHubS()}/a></li>
+  </ul>
+</article>
+`
+}
+}).join('');
+
 };
 
 // export function to generate entire page

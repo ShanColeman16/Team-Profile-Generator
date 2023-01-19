@@ -68,6 +68,6 @@ const internQuestions = [
 prompt(managerQuestions).then(({ name, id, email, officeNumber }) => {
   const manager = new Manager(name, id, email, officeNumber);
   yourTeams.push(manager);
-  const template =pageTemplate(teamMembers);
+  const template = pageTemplate(TeamMembers);
   fs.writeFileSync('./dist/team.html', template);
 });
