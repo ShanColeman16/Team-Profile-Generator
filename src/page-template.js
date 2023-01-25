@@ -1,39 +1,39 @@
 // create the team
 const generateTeamMembers = (team) => {
-  return team.map(memeber => {
-    if (memeber.getRole() === 'Engineer') {
+  return team.map(member => {
+    if (member.getRole() === 'Engineer') {
       return  `
       <article>
-      <h2>${memeber.getRole()}</h2>
+      <h2>${member.getRole()}</h2>
       <ul>
-        <li>ID:${memeber.getId()}</li>
-        <li>Email:${memeber.getEmail()}</li>
-        <li>GitHub: <a href="#github">${memeber.getGitHubS()}/a></li>
+        <li>ID:${member.getId()}</li>
+        <li>Email:${member.getEmail()}</li>
+        <li>GitHub: <a href="#github">${member.getGitHubS()}/a></li>
       </ul>
     </article>
     `
   }
-  if (memeber.getRole() === 'Intern') {
+  if (member.getRole() === 'Intern') {
     return  `
     <article>
-    <h2>${memeber.getRole()}</h2>
+    <h2>${member.getRole()}</h2>
     <ul>
-      <li>ID:${memeber.getId()}</li>
-      <li>Email:${memeber.getEmail()}</li>
-      <li>GitHub: <a href="#github">${memeber.getGitHubS()}/a></li>
+      <li>ID:${member.getId()}</li>
+      <li>Email:${member.getEmail()}</li>
+      <li>GitHub: <a href="#github">${member.getGitHub()}/a></li>
     </ul>
   </article>
   `
 }
 
-if (memeber.getRole() === 'Manager') {
+if (member.getRole() === 'Manager') {
   return  `
   <article>
-  <h2>${memeber.getRole()}</h2>
+  <h2>${member.getRole()}</h2>
   <ul>
-    <li>ID:${memeber.getId()}</li>
-    <li>Email:${memeber.getEmail()}</li>
-    <li>GitHub: <a href="#github">${memeber.getGitHubS()}/a></li>
+    <li>ID:${member.getId()}</li>
+    <li>Email:${member.getEmail()}</li>
+    <li>OfficeNumber ${member.getOfficeNumber()}</li>
   </ul>
 </article>
 `
@@ -45,7 +45,7 @@ if (memeber.getRole() === 'Manager') {
 // export function to generate entire page
 module.exports = (team) => {
   // TODO: MAIN HTML TEMPLATE LITERAL GOES HERE
-  `
+  return `
 <!DOCTYPE html>
 <html lang="en">
 <head>

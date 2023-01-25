@@ -64,10 +64,18 @@ const internQuestions = [
     message: 'What is your email address?'
   },
 ];
+function init() {
+  console.log ('running');
+  inquirer.prompt(managerQuestions).then(({ name, id, email, officeNumber }) => {
+    const manager = new Manager(name, id, email, officeNumber);
+    yourTeams.push(manager);
+      const template = pageTemplate(yourTeams);
+    console.log(template);
+    fs.writeFileSync('./dist/team.html', template, "utf-8");
+  })
 
-prompt(managerQuestions).then(({ name, id, email, officeNumber }) => {
-  const manager = new Manager(name, id, email, officeNumber);
-  yourTeams.push(manager);
-  const template = pageTemplate(TeamMembers);
-  fs.writeFileSync('./dist/team.html', template);
-});
+
+
+};
+
+init();
