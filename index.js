@@ -81,20 +81,9 @@ prompt (managerQuestions).then(({name, id,email,officeNumber}) => {
 .then(({addMore}) => {
   if (addMore) {
     console.log('Please Continue');
+  } else {
+    const template = pageTemplate(yourTeams);
+    fs.writeFileSync('./dist/team.html', template, "utf-8");
   }
 });
 
-function init() {
-  inquirer.prompt(managerQuestions).then(({ name, id, email, officeNumber }) => {
-    const manager = new Manager(name, id, email, officeNumber);
-    yourTeams.push(manager);
-      const template = pageTemplate(yourTeams);
-    console.log(template);
-    fs.writeFileSync('./dist/team.html', template, "utf-8");
-  })
-
-
-
-};
-
-init();
