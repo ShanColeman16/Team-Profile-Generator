@@ -4,6 +4,8 @@ https://drive.google.com/file/d/1-qtryj7f9ZHbHV23o_-0Q0qupbeG_5Fk/view
 # Team-Profile-Generator
 ## User Story
 
+https://drive.google.com/file/d/1v1LTLKbzIpmlS-PK8C7xtBGcfwS143wT/view
+
 AS A manager
 I WANT to generate a webpage that displays my team's basic info
 SO THAT I have quick access to their emails and GitHub profiles
