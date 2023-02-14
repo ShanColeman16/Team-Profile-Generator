@@ -8,7 +8,7 @@ const prompt = inquirer.createPromptModule();
 const pageTemplate = require('./src/page-template');
 const yourTeams = [];
 
-prompt([  
+const managerQuestions =[  
   {
   message: 'May I have your manager\'s name?',
   name: 'name',
@@ -23,46 +23,26 @@ prompt([
 },
 {
   message: 'May I have your manager\'s office number?',
-  name: 'office number',
+  name: 'office Number',
 },
-
-
-]).then ((manager) => {
-
-});
-
-const managerQuestions = [
-  {
-    message: 'Please enter your manager\'s name?',
-    name: 'name',
-  },
-  {
-    message: 'What is your manager\'s id?',
-    name: 'id',
-  },
-  {
-    message: 'What is your manager\'s email address?',
-    name: 'email',
-  },
-  {
-    message: 'What is your manager\s office number?',
-    name: 'officeNumber',
-  },
 ];
-
 
 const engineerQuestions = [
   {
+    message: 'May I have your engineer\'s name?',
     name: 'name',
-    message: 'Engineer? Please enter your name?'
   },
   {
+    message: 'May I have your engineer\'s id?',
     name: 'id',
-    message: 'What is your employee id?'
   },
   {
+    message: 'May I have your engineer\'s email?',
     name: 'email',
-    message: 'What is your email address?'
+  },
+  {
+    message: 'May I have your engineer\'s office number?',
+    name: 'office Number',
   },
   {
     name: 'gitHub',
@@ -71,24 +51,40 @@ const engineerQuestions = [
 ];
 const internQuestions = [
   {
+    message: 'May I have your intern\'s name?',
     name: 'name',
-    message: 'Intern? Please enter your name?'
   },
   {
+    message: 'May I have your intern\'s id?',
     name: 'id',
-    message: 'What is your employee id?'
   },
   {
-    name: 'school',
-    message: 'What is the name of your school?'
-  },
-  {
+    message: 'May I have your intern\'s email?',
     name: 'email',
-    message: 'What is your email address?'
+  },
+  {
+    message: 'May I have your intern\'s school?',
+    name: 'school',
   },
 ];
+prompt (managerQuestions).then(({name, id,email,officeNumber}) => {
+  const manager = new Manager(name, id,email,officeNumber);
+  yourTeams.push(manager);
+})
+.then(() => {
+ return prompt ({
+    message: "Do you need to add more employees?",
+    type: 'confirm', 
+    name: 'addMore,'
+  })
+})
+.then(({addMore}) => {
+  if (addMore) {
+    console.log('Please Continue');
+  }
+});
+
 function init() {
-  console.log ('running');
   inquirer.prompt(managerQuestions).then(({ name, id, email, officeNumber }) => {
     const manager = new Manager(name, id, email, officeNumber);
     yourTeams.push(manager);
