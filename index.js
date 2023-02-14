@@ -8,6 +8,29 @@ const prompt = inquirer.createPromptModule();
 const pageTemplate = require('./src/page-template');
 const yourTeams = [];
 
+prompt([  
+  {
+  message: 'May I have your manager\'s name?',
+  name: 'name',
+},
+{
+  message: 'May I have your manager\'s id?',
+  name: 'id',
+},
+{
+  message: 'May I have your manager\'s email?',
+  name: 'email',
+},
+{
+  message: 'May I have your manager\'s office number?',
+  name: 'office number',
+},
+
+
+]).then ((manager) => {
+
+});
+
 const managerQuestions = [
   {
     message: 'Please enter your manager\'s name?',
